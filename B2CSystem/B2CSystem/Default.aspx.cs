@@ -97,7 +97,26 @@ namespace B2CSystem
 
         protected void dlHot_ItemCommand(object source, DataListCommandEventArgs e)
         {
-
+            if (e.CommandName == "detailSee")
+            {
+                AddressBack(e);
+            }
+            else if (e.CommandName == "buy")
+            {
+                AddShopCart(e);
+            }
         }
+
+        //绑定市场价格
+        public string GetVarMKP(string strMarketPrice)
+        {
+            return ccObj.VarStr(strMarketPrice, 2);
+        }
+        //绑定热卖价格
+        public string GetVarHot(string strHotPrice)
+        {
+            return ccObj.VarStr(strHotPrice, 2);
+        }
+
     }
 }

@@ -1,0 +1,138 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="B2CSystem.MasterPage" %>
+
+<%@ Register Src="userControl/navigate.ascx" TagName="navigate" TagPrefix="uc3" %>
+<%@ Register Src="userControl/bottom.ascx" TagName="bottom" TagPrefix="uc4" %>
+<%@ Register Src="userControl/LoadingControl.ascx" TagName="LoadingControl" TagPrefix="uc2" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>母版页</title>
+    <script type="text/javascript" src="Scripts/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />   
+    <link href="css/global.css" rel="stylesheet" /> 
+    <asp:contentplaceholder id="HeadPlaceHolder1" runat="server">
+    </asp:contentplaceholder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="row custom-header-logo">
+            <div class="col-sm-12 col-md-12">
+                <div class="custom-header-logo-content">
+                    <div class="custom-header-logo-content-left">
+                        <img src="Img/logo.png"/>
+                    </div>
+                    <div class="custom-header-logo-content-right">
+                        <uc2:LoadingControl id="LoadingControl" runat="server"></uc2:LoadingControl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row custom-header-menu">
+            <div class="col-sm-12 col-md-12">
+                <nav>
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">首页</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/goodsList.aspx?id=2&&var=1">推荐商品</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/goodsList.aspx?id=3&&var=1">最新商品</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/goodsList.aspx?id=4&&var=1">热门商品</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/shopCart.aspx">购物车</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/buyFlow.aspx">购物流程</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/feedback.aspx">网站留言</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/MyWord.aspx">我的留言</asp:HyperLink>
+                </nav>
+            </div>
+        </div>
+        <div class="row custom-header-big">
+            <div class="col-sm-12 col-md-12">
+                 <div class="custom-header-big-content">
+                    <div class="custom-header-big-content-min">
+                        <div>
+    	                    <h1>今日秒杀商品</h1>
+                            <p>128元秒杀,300件库存购完为止。</p>
+                            <a href="goodsList.aspx?id=2&&var=1" class="buy_now">浏览更多商品</a>
+                        </div>
+                         <div>
+                             <img src="Img/image_product.png" alt="商品" />
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row custom-body-top">
+            <div class="col-sm-12 col-md-12">
+                <div class="row custom-body-top-img"></div>
+            </div>
+        </div>
+        <div class="row custom-body-recommend">
+            <div class="col-sm-12 col-md-12">
+                <div class="custom-body-recommend-content">
+                    <h4>推荐商品</h4>
+                    <div class="custom-body-recommend-content-items">
+                        <asp:DataList ID="dLRefine" runat="server" RepeatColumns="4" RepeatDirection="Horizontal" OnItemCommand="dLRefine_ItemCommand" >
+                            <ItemTemplate>
+                                <table style=" height: 120px;margin-left:45px;">
+                                    <tr>
+                                        <td rowspan="5" style="width: 29px">
+                                         <asp:Image ID="imageRefine" runat="server"  ImageUrl =<%#DataBinder.Eval(Container.DataItem,"BookUrl")%>/>
+                                        </td>
+                                        <td colspan="2">
+                                        <asp:LinkButton ID="lnkbtnRName" runat="server" CommandName="detailSee"  Font-Underline=false  CommandArgument =<%#DataBinder.Eval(Container.DataItem, "BookID")%>>
+                                        <%#DataBinder.Eval(Container.DataItem, "BookName")%>
+                                        </asp:LinkButton>
+                                        </td>
+                                
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            市场价：</td>
+                                        <td>
+<%--                                         <%#GetVarMKP(DataBinder.Eval(Container.DataItem, "MarketPrice").ToString())%>￥--%>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            热卖价：</td>
+                                        <td>
+<%--                                          <%#GetVarHot(DataBinder.Eval(Container.DataItem, "HotPrice").ToString())%>￥--%>
+                                        </td>
+                                    </tr>
+                                     <tr>
+                                        <td colspan="2">
+                                            <asp:ImageButton ID="imagebtnRefine" runat="server" CommandName="buy" CommandArgument ='<%# DataBinder.Eval(Container.DataItem, "BookID") %>' ImageUrl="~/images/购买.jpg" OnClick="imagebtnRefine_Click" />
+                                            </td>
+                                    </tr>
+                                </table>
+                            </ItemTemplate>
+                        </asp:DataList>  
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row custom-body-main">
+            <div class="col-sm-12 col-md-12">
+                <div class="custom-body-main-content">
+                    <div class="custom-body-main-content-left">
+                        <uc3:navigate id="Navigate1" runat="server"></uc3:navigate>
+                    </div>
+                    <div class="custom-body-main-content-right">
+                        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+                        </asp:contentplaceholder>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row custom-body-main-end">
+            <div class="col-sm-12 col-md-12">
+                <div class="custom-body-main-end-content"></div>
+            </div>
+        </div>
+        <div class="row custom-body-bottom">
+            <div class="col-sm-12 col-md-12">
+                <div class="custom-body-bottom-content">
+                    <uc4:bottom ID="Bottom1" runat="server" />
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
