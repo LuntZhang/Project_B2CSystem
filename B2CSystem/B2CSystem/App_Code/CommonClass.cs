@@ -20,7 +20,16 @@ namespace B2CSystem
                   "</script>";
             return str;
         }
-
+        /// <summary>
+        /// 说明：MessageBox用来在客户端弹出对话框。
+        /// 参数：TxtMessage 对话框中显示的内容。
+        /// </summary>
+        public string MessageBox(string TxtMessage)
+        {
+            string str;
+            str = "<script language=javascript>alert('" + TxtMessage + "')</script>";
+            return str;
+        }
         /// <summary>
         /// 说明：MessageBoxPage用来在客户端弹出对话框，
         ///       提示用户执行某种操作或已完成了某种操作，

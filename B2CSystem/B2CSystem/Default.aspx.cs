@@ -14,7 +14,7 @@ namespace B2CSystem
         GoodsClass gcObj = new GoodsClass();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack == true)
+            if (IsPostBack == false)
             {
                 HotBind();
                 DiscountBind();

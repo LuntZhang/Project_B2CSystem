@@ -58,6 +58,10 @@ namespace B2CSystem
             myCmd.Parameters.Add(Deplay);
             dBObj.ExecNonQuery(myCmd);
             DataTable dataTable = dBObj.GetDataSet(myCmd, TableName);
+            foreach (DataRow item in dataTable.Rows)
+            {
+                string sdfds = item[2].ToString();
+            }
             dlBind(dlName, dataTable);
         }
         /// <summary>
