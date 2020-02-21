@@ -1,22 +1,17 @@
 ﻿using System;
-using System.Data;
-using System.Configuration;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web;
-using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Web.UI.HtmlControls;
 
 namespace B2CSystem
 {
-
-    public partial class _Default : System.Web.UI.Page
+    public partial class Default : System.Web.UI.Page
     {
         CommonClass ccObj = new CommonClass();
         GoodsClass gcObj = new GoodsClass();
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack == true)
@@ -31,14 +26,14 @@ namespace B2CSystem
         /// </summary>
         protected void HotBind()
         {
-            gcObj.DLDelayGI(3, this.dlHot, "Hot");
+            gcObj.DLDeplayGI(3, this.dlHot, "Hot");
         }
         /// <summary>
         /// 绑定最新商品
         /// </summary>
         protected void DiscountBind()
         {
-            gcObj.DLDelayGI(2, this.dlDiscount, "Dissount");
+            gcObj.DLDeplayGI(2, this.dlDiscount, "Dissount");
         }
 
         protected void dlDiscount_ItemCommand(object source, DataListCommandEventArgs e)
@@ -71,7 +66,7 @@ namespace B2CSystem
             {
                 // 用户已经有购物车
                 hashCar = (Hashtable)Session["ShopCart"];
-                if(hashCar.Contains(e.CommandArgument)== true)
+                if (hashCar.Contains(e.CommandArgument) == true)
                 {
                     // 得到商品数量
                     int count = Convert.ToInt32(hashCar[e.CommandArgument].ToString());
@@ -92,7 +87,7 @@ namespace B2CSystem
         {
             Session["address"] = "";
             Session["address"] = "Default.aspx";
-            Response.Redirect("~/showInfo.aspx?id="+Convert.ToInt32(e.CommandArgument.ToString()));
+            Response.Redirect("~/showInfo.aspx?id=" + Convert.ToInt32(e.CommandArgument.ToString()));
         }
 
         protected void dlHot_ItemCommand(object source, DataListCommandEventArgs e)

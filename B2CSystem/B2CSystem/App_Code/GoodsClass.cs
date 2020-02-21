@@ -49,7 +49,7 @@ namespace B2CSystem
         /// <param name="IntDeply">商品分类标志</param>
         /// <param name="dlName">绑定商品的DataList控件</param>
         /// <param name="TableName">数据集标志</param>
-        public void DLDelayGI(int IntDeply, DataList dlName, string TableName)
+        public void DLDeplayGI(int IntDeply, DataList dlName, string TableName)
         {
             SqlCommand myCmd = dBObj.GetCommandProc("proc_DeplayGI");
             // 添加参数

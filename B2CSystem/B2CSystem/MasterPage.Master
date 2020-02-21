@@ -1,18 +1,18 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="B2CSystem.MasterPage" %>
 
-<%@ Register Src="userControl/navigate.ascx" TagName="navigate" TagPrefix="uc3" %>
-<%@ Register Src="userControl/bottom.ascx" TagName="bottom" TagPrefix="uc4" %>
 <%@ Register Src="userControl/LoadingControl.ascx" TagName="LoadingControl" TagPrefix="uc2" %>
+
 <!DOCTYPE html>
+
 <html>
 <head runat="server">
     <title>母版页</title>
     <script type="text/javascript" src="Scripts/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />   
-    <link href="css/global.css" rel="stylesheet" /> 
-    <asp:contentplaceholder id="HeadPlaceHolder1" runat="server">
-    </asp:contentplaceholder>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/global.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="HeadPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -20,7 +20,7 @@
             <div class="col-sm-12 col-md-12">
                 <div class="custom-header-logo-content">
                     <div class="custom-header-logo-content-left">
-                        <img src="Img/logo.png"/>
+                        <img src="Img/logo.png" />
                     </div>
                     <div class="custom-header-logo-content-right">
                         <uc2:LoadingControl id="LoadingControl" runat="server"></uc2:LoadingControl>
@@ -44,16 +44,16 @@
         </div>
         <div class="row custom-header-big">
             <div class="col-sm-12 col-md-12">
-                 <div class="custom-header-big-content">
+                <div class="custom-header-big-content">
                     <div class="custom-header-big-content-min">
                         <div>
-    	                    <h1>今日秒杀商品</h1>
+                            <h1>今日秒杀商品</h1>
                             <p>128元秒杀,300件库存购完为止。</p>
                             <a href="goodsList.aspx?id=2&&var=1" class="buy_now">浏览更多商品</a>
                         </div>
-                         <div>
-                             <img src="Img/image_product.png" alt="商品" />
-                         </div>
+                        <div>
+                            <img src="Img/image_product.png" alt="商品" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -68,42 +68,40 @@
                 <div class="custom-body-recommend-content">
                     <h4>推荐商品</h4>
                     <div class="custom-body-recommend-content-items">
-                        <asp:DataList ID="dLRefine" runat="server" RepeatColumns="4" RepeatDirection="Horizontal" OnItemCommand="dLRefine_ItemCommand" >
+                        <asp:DataList ID="dLRefine" runat="server" RepeatColumns="4" RepeatDirection="Horizontal" OnItemCommand="dLRefine_ItemCommand">
                             <ItemTemplate>
-                                <table style=" height: 120px;margin-left:45px;">
+                                <table style="height: 120px; margin-left: 45px;">
                                     <tr>
                                         <td rowspan="5" style="width: 29px">
-                                         <asp:Image ID="imageRefine" runat="server"  ImageUrl =<%#DataBinder.Eval(Container.DataItem,"BookUrl")%>/>
+                                            <asp:Image ID="imageRefine" runat="server" ImageUrl='<%#DataBinder.Eval(Container.DataItem,"BookUrl")%>' />
                                         </td>
                                         <td colspan="2">
-                                        <asp:LinkButton ID="lnkbtnRName" runat="server" CommandName="detailSee"  Font-Underline=false  CommandArgument =<%#DataBinder.Eval(Container.DataItem, "BookID")%>>
+                                            <asp:LinkButton ID="lnkbtnRName" runat="server" CommandName="detailSee" Font-Underline="false" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "BookID")%>'>
                                         <%#DataBinder.Eval(Container.DataItem, "BookName")%>
-                                        </asp:LinkButton>
+                                            </asp:LinkButton>
                                         </td>
-                                
+
                                     </tr>
                                     <tr>
+                                        <td>市场价：</td>
                                         <td>
-                                            市场价：</td>
-                                        <td>
-<%--                                         <%#GetVarMKP(DataBinder.Eval(Container.DataItem, "MarketPrice").ToString())%>￥--%>
+                                            <%#GetVarMKP(DataBinder.Eval(Container.DataItem, "MarketPrice").ToString())%>￥
                                         </td>
                                     </tr>
                                     <tr>
+                                        <td>热卖价：</td>
                                         <td>
-                                            热卖价：</td>
-                                        <td>
-<%--                                          <%#GetVarHot(DataBinder.Eval(Container.DataItem, "HotPrice").ToString())%>￥--%>
+                                            <%#GetVarHot(DataBinder.Eval(Container.DataItem, "HotPrice").ToString())%>￥
                                         </td>
                                     </tr>
-                                     <tr>
+                                    <tr>
                                         <td colspan="2">
-                                            <asp:ImageButton ID="imagebtnRefine" runat="server" CommandName="buy" CommandArgument ='<%# DataBinder.Eval(Container.DataItem, "BookID") %>' ImageUrl="~/images/购买.jpg" OnClick="imagebtnRefine_Click" />
-                                            </td>
+                                            <asp:ImageButton ID="imagebtnRefine" runat="server" CommandName="buy" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "BookID") %>' ImageUrl="~/images/购买.jpg" OnClick="imagebtnRefine_Click" />
+                                        </td>
                                     </tr>
                                 </table>
                             </ItemTemplate>
-                        </asp:DataList>  
+                        </asp:DataList>
                     </div>
                 </div>
             </div>
@@ -115,8 +113,8 @@
                         <uc3:navigate id="Navigate1" runat="server"></uc3:navigate>
                     </div>
                     <div class="custom-body-main-content-right">
-                        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
-                        </asp:contentplaceholder>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
                     </div>
                 </div>
             </div>
@@ -129,7 +127,7 @@
         <div class="row custom-body-bottom">
             <div class="col-sm-12 col-md-12">
                 <div class="custom-body-bottom-content">
-                    <uc4:bottom ID="Bottom1" runat="server" />
+                    <uc4:bottom id="Bottom1" runat="server" />
                 </div>
             </div>
         </div>

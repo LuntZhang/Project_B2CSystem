@@ -10,7 +10,7 @@
 namespace B2CSystem {
     
     
-    public partial class _Default {
+    public partial class Default {
         
         /// <summary>
         /// dlDiscount 控件。
