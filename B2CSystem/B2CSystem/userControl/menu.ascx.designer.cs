@@ -7,37 +7,19 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace B2CSystem {
+namespace B2CSystem.userControl {
     
     
-    public partial class MasterPage {
+    public partial class menu {
         
         /// <summary>
-        /// HeadPlaceHolder1 控件。
+        /// labDate 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadPlaceHolder1;
-        
-        /// <summary>
-        /// form1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// LoadingControl 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::B2CSystem.userControl.LoadingControl LoadingControl;
+        protected global::System.Web.UI.WebControls.Label labDate;
         
         /// <summary>
         /// HyperLink1 控件。
@@ -112,39 +94,12 @@ namespace B2CSystem {
         protected global::System.Web.UI.WebControls.HyperLink HyperLink9;
         
         /// <summary>
-        /// dLRefine 控件。
+        /// lnkbtnOut 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dLRefine;
-        
-        /// <summary>
-        /// Navigate1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::B2CSystem.userControl.navigate Navigate1;
-        
-        /// <summary>
-        /// ContentPlaceHolder1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
-        
-        /// <summary>
-        /// Bottom1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::B2CSystem.userControl.bottom Bottom1;
+        protected global::System.Web.UI.WebControls.LinkButton lnkbtnOut;
     }
 }

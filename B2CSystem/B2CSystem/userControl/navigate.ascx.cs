@@ -1,49 +1,48 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
-using System.Configuration;
-using System.Collections;
+using System.Linq;
 using System.Web;
-using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Web.UI.HtmlControls;
-using B2CSystem;
 
-public partial class userControl_navigate : System.Web.UI.UserControl
+namespace B2CSystem.userControl
 {
-    protected DataRowCollection drc = null;
-    GoodsClass gcObj = new GoodsClass();
-    protected void Page_Load(object sender, EventArgs e)
+    public partial class navigate : System.Web.UI.UserControl
     {
-        if (!IsPostBack)
+        protected DataRowCollection drc = null;
+        GoodsClass gcObj = new GoodsClass();
+        protected void Page_Load(object sender, EventArgs e)
         {
-            DataTable dt = gcObj.DLClassBind();
-            if (dt != null && dt.Rows.Count > 0)
+            if (!IsPostBack)
             {
-                drc = dt.Rows;
+                DataTable dt = gcObj.DLClassBind();
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    drc = dt.Rows;
+                }
             }
         }
-    }
-    protected void dlClass_ItemCommand(object source, DataListCommandEventArgs e)
-    {
-        if (e.CommandName == "select")
+        protected void dlClass_ItemCommand(object source, DataListCommandEventArgs e)
         {
-            Response.Redirect("goodsList.aspx?id=" + e.CommandArgument);
+            if (e.CommandName == "select")
+            {
+                Response.Redirect("goodsList.aspx?id=" + e.CommandArgument);
+            }
         }
-    }
-    public string GetClassName(int IntClassID)
-    {
-        return gcObj.GetClass(IntClassID);
-    }
-    protected void dlNewGoods_ItemCommand(object source, DataListCommandEventArgs e)
-    {
-        if (e.CommandName == "detailSee")
+        public string GetClassName(int IntClassID)
         {
-            Session["address"] = "";
-            Session["address"] = "Default.aspx";
-            Response.Redirect("~/showInfo.aspx?id=" + Convert.ToInt32(e.CommandArgument.ToString()));
+            return gcObj.GetClass(IntClassID);
         }
+        protected void dlNewGoods_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            if (e.CommandName == "detailSee")
+            {
+                Session["address"] = "";
+                Session["address"] = "Default.aspx";
+                Response.Redirect("~/showInfo.aspx?id=" + Convert.ToInt32(e.CommandArgument.ToString()));
+            }
 
+        }
     }
 }

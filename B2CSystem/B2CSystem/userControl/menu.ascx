@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="menu.ascx.cs" Inherits="userControl_menu" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="menu.ascx.cs" Inherits="B2CSystem.userControl.menu" %>
 <table style="width: 778px; font-size: 9pt; font-family: 宋体; vertical-align: top; background-image: url('../images/banner.jpg'); background-repeat: no-repeat"
     border="0" cellpadding="0" cellspacing="0">
     <tr valign="top">

@@ -50,3 +50,4 @@ D:\WorkSpace\Project_B2CSystem\B2CSystem\B2CSystem\bin\zh-Hans\Microsoft.AspNet.
 D:\WorkSpace\Project_B2CSystem\B2CSystem\B2CSystem\obj\Debug\B2CSystem.csproj.CopyComplete
 D:\WorkSpace\Project_B2CSystem\B2CSystem\B2CSystem\obj\Debug\B2CSystem.dll
 D:\WorkSpace\Project_B2CSystem\B2CSystem\B2CSystem\obj\Debug\B2CSystem.pdb
+D:\WorkSpace\Project_B2CSystem\B2CSystem\B2CSystem\obj\Debug\B2CSystem.csprojAssemblyReference.cache

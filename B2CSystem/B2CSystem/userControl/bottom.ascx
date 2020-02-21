@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="bottom.ascx.cs" Inherits="userControl_bottom" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="bottom.ascx.cs" Inherits="B2CSystem.userControl.bottom" %>
 <div class="row">
     <div class="col-sm-12 col-md-12 custom-body-bottom-link">
         <a href="#" style="margin-left:25px;">交款方式</a>&nbsp;&nbsp;

@@ -1,6 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="B2CSystem.MasterPage" %>
 
 <%@ Register Src="userControl/LoadingControl.ascx" TagName="LoadingControl" TagPrefix="uc2" %>
+<%@ Register Src="userControl/navigate.ascx" TagName="navigate" TagPrefix="uc3" %>
+<%@ Register Src="userControl/bottom.ascx" TagName="bottom" TagPrefix="uc4" %>
 
 <!DOCTYPE html>
 

@@ -1,18 +1,17 @@
 ﻿using System;
-using System.Data;
-using System.Configuration;
-using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web;
-using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-using System.Web.UI.HtmlControls;
 
-public partial class userControl_bottom : System.Web.UI.UserControl
+namespace B2CSystem.userControl
 {
-    protected void Page_Load(object sender, EventArgs e)
+    public partial class bottom : System.Web.UI.UserControl
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
